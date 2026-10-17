@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="img/casal.png">
+  <title>La Rose Decorações | Decoração de Casamentos e Eventos</title>
+  
+  <!-- Meta Tags SEO / Google Meu Negócio -->
+  <meta name="description" content="A La Rose Decorações é especialista em decoração de casamentos, festas de 15 anos e eventos com elegância e sofisticação. Fale conosco no WhatsApp!">
+  <meta name="theme-color" content="#1e1d1b">
+
+  <!-- Google Fonts: Playfair Display + Cormorant Garamond + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================
+       1. RESET & VARIÁVEIS GLOBAIS
+       ========================================== */
+    :root {
+      --bg-light: #fbf9f6;
+      --bg-card: #f4efe9;
+      --bg-dark: #191817;
+      --text-main: #2b2825;
+      --text-muted: #6e675f;
+      --gold-accent: #c5a059;
+      --gold-hover: #a38141;
+      --whatsapp-color: #25d366;
+      --font-title: 'Playfair Display', serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 70px; /* Espaço para a barra fixa mobile */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 25px;
+    }
+
+    /* ==========================================
+       2. HEADER & NAVBAR (DESKTOP & MOBILE)
+       ========================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 0;
+      z-index: 1000;
+      background: rgba(251, 249, 246, 0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .logo span {
+      color: var(--gold-accent);
+    }
+
+    .menu-toggle {
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-main);
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background-color: var(--bg-light);
+      padding: 90px 30px 40px;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    nav.active {
+      right: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--gold-accent);
+    }
+
+    .nav-close {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 1.8rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ==========================================
+       3. HERO SECTION
+       ========================================== */
+    .hero {
+      min-height: 92vh;
+      padding: 140px 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(180deg, rgba(25, 24, 23, 0.6) 0%, rgba(25, 24, 23, 0.75) 100%), 
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-style: italic;
+      color: var(--gold-accent);
+      margin-bottom: 12px;
+      display: block;
+      letter-spacing: 1px;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: #e5e0d8;
+      margin: 0 auto 35px;
+      font-weight: 300;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background-color: var(--gold-accent);
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--gold-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(197, 160, 89, 0.5);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+      padding: 15px 36px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #ffffff;
+      color: var(--text-main);
+    }
+
+    /* ==========================================
+       4. SOBRE & SERVIÇOS
+       ========================================== */
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .section-tag {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--gold-accent);
+      font-style: italic;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+    }
+
+    .about-img-main {
+      border-radius: 6px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      width: 100%;
+    }
+
+    .services-bg {
+      background-color: var(--bg-card);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background-color: var(--bg-light);
+      padding: 35px 25px;
+      border-radius: 6px;
+      border: 1px solid rgba(197, 160, 89, 0.15);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--gold-accent);
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================
+       5. PORTFÓLIO INSTAGRAM
+       ========================================== */
+    .portfolio-filters {
+      display: flex;
+      gap: 10px;
+      margin: 30px 0 40px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid rgba(110, 103, 95, 0.3);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--gold-accent);
+      color: #ffffff;
+      border-color: var(--gold-accent);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background-color: #e5e0d8;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(25, 24, 23, 0.85), transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+      color: #ffffff;
+      text-align: left;
+      opacity: 1;
+      transition: var(--transition);
+    }
+
+    .portfolio-overlay .category-badge {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-accent);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .portfolio-overlay h4 {
+      font-family: var(--font-title);
+      font-size: 1.3rem;
+    }
+
+    .portfolio-overlay p {
+      font-size: 0.85rem;
+      color: #d1ccc5;
+    }
+
+    .portfolio-item.hide {
+      display: none;
+    }
+
+    /* ==========================================
+       6. MODAL LIGHTBOX
+       ========================================== */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      width: 100%;
+      max-width: 650px;
+      position: relative;
+      text-align: center;
+    }
+
+    .lightbox-content img {
+      max-height: 70vh;
+      margin: 0 auto;
+      border-radius: 6px;
+      object-fit: contain;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-caption {
+      color: #ffffff;
+      margin-top: 15px;
+    }
+
+    .lightbox-caption h4 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: var(--gold-accent);
+    }
+
+    .lightbox-caption p {
+      font-size: 0.9rem;
+      color: #a09a92;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      color: #ffffff;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================
+       7. DEPOIMENTOS & LOCALIZAÇÃO
+       ========================================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-light);
+      padding: 30px 25px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    .testimonial-card i {
+      color: var(--gold-accent);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card p {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--gold-accent);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .info-item i {
+      font-size: 1.2rem;
+      color: var(--gold-accent);
+      margin-top: 4px;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 380px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================
+       8. BANNER DE CONVERSÃO FINAL & FOOTER PROFISSIONAL
+       ========================================== */
+    .cta-banner {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .cta-banner h2 {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .cta-banner p {
+      color: #a09a92;
+      max-width: 650px;
+      margin: 0 auto 35px;
+      font-size: 1rem;
+    }
+
+    .footer-site {
+      background-color: #121110;
+      color: #a09a92;
+      padding: 70px 0 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .logo-footer {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .logo-footer span {
+      color: var(--gold-accent);
+    }
+
+    .footer-desc {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-socials a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-accent);
+      font-size: 1.1rem;
+      transition: var(--transition);
+      border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .footer-socials a:hover {
+      background: var(--gold-accent);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .footer-title {
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .footer-links, .footer-contact-info {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: #a09a92;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+      padding-left: 5px;
+    }
+
+    .footer-contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact-info i {
+      color: var(--gold-accent);
+    }
+
+    /* Coluna Vittino Fly */
+    .developer-col {
+      background: rgba(255, 255, 255, 0.02);
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid rgba(197, 160, 89, 0.15);
+    }
+
+    .dev-tagline {
+      font-size: 0.82rem;
+      color: #c5c0b8;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .dev-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dev-portfolio-btn {
+      background-color: transparent;
+      border: 1px solid var(--gold-accent);
+      color: var(--gold-accent);
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dev-portfolio-btn:hover {
+      background-color: var(--gold-accent);
+      color: #ffffff;
+    }
+
+    .dev-whatsapp-btn {
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dev-whatsapp-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom strong {
+      color: #ffffff;
+    }
+
+    .dev-credit a {
+      color: var(--gold-accent);
+      transition: var(--transition);
+    }
+
+    .dev-credit a:hover {
+      text-decoration: underline;
+    }
+
+    /* BARRA FIXA MOBILE */
+    .mobile-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      padding: 12px 20px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      display: flex;
+      z-index: 1000;
+    }
+
+    .mobile-bottom-btn {
+      background-color: var(--whatsapp-color);
+      color: #ffffff;
+      width: 100%;
+      padding: 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ==========================================
+       9. RESPONSIVIDADE DESKTOP
+       ========================================== */
+    @media (min-width: 768px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-group {
+        flex-direction: row;
+      }
+      .btn-primary, .btn-secondary {
+        width: auto;
+      }
+    }
+
+    @media (min-width: 992px) {
+      body {
+        padding-bottom: 0;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      nav {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+      }
+      nav ul {
+        flex-direction: row;
+        gap: 35px;
+      }
+      .nav-close {
+        display: none;
+      }
+      .mobile-bottom-bar {
+        display: none;
+      }
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+      }
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .portfolio-filters {
+        justify-content: center;
+      }
+      .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .location-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="logo">La Rose <span>.</span></div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="navbar">
+        <button class="nav-close" id="navClose">&times;</button>
+        <ul>
+          <li><a href="#sobre" class="nav-link">A La Rose</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+          <li><a href="#localizacao" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Você sonha! A gente faz.</span>
+      <h1 class="hero-title">Transformando Casamentos em Cenários Inesquecíveis</h1>
+      <p class="hero-subtitle">Projetos cenográficos exclusivos, arranjos florais exuberantes e ambientação sob medida para o seu grande dia.</p>
+      <div class="cta-group">
+        <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="btn-primary">
+          <i class="fab fa-whatsapp"></i> Orçamento no WhatsApp
+        </a>
+        <a href="#portfolio" class="btn-secondary">Ver Portfólio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section-padding" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="section-tag">Elegância e Amor</span>
+          <h2 class="section-title">Design Cenográfico para Histórias Reais</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Na <strong>La Rose Decorações</strong>, criamos a atmosfera perfeita para suas memórias mais importantes. Especialistas em casamentos ao ar livre, festas de 15 anos e grandes recepções.
+          </p>
+          <a href="https://wa.me/5564992872934?text=Olá!%20Gostaria%20de%20saber%20mais." target="_blank" class="btn-primary" style="margin-top: 10px;">Falar Conosco</a>
+        </div>
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Decoração La Rose" class="about-img-main" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section-padding services-bg" id="servicos">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">O Que Fazemos</span>
+        <h2 class="section-title">Nossos Serviços</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-church service-icon"></i>
+          <h3>Casamentos</h3>
+          <p>Projetos cenográficos completos para cerimônias e recepções inesquecíveis.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-crown service-icon"></i>
+          <h3>Festas de 15 Anos</h3>
+          <p>Cenários modernos e sofisticados para comemorar em grande estilo.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-seedling service-icon"></i>
+          <h3>Arranjos Florais</h3>
+          <p>Composições com flores nobres selecionadas para mesas e portais.</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fas fa-glass-cheers service-icon"></i>
+          <h3>Eventos Sociais</h3>
+          <p>Ambientação sofisticada para jantares e celebrações especiais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO INSTAGRAM -->
+  <section class="section-padding" id="portfolio">
+    <div class="container" style="text-align: center;">
+      <span class="section-tag">Galeria do Instagram</span>
+      <h2 class="section-title">Nossos Eventos</h2>
+
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="casamentos">Casamentos</button>
+        <button class="filter-btn" data-filter="15anos">15 Anos</button>
+        <button class="filter-btn" data-filter="arranjos">Arranjos</button>
+        <button class="filter-btn" data-filter="noivos">Noivos</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item 15anos" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000', 'XV Ana Júlia', 'Lustres de Cristal & Espelhos')">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="XV Ana Júlia" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="category-badge">15 Anos</span>
+            <h4>XV Ana Júlia</h4>
+            <p>Lustres & Espelhos</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item casamentos arranjos" onclick="openLightbox('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1000', 'Lavínia & Fellipe', 'Passarela Cênica')">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600" alt="Lavínia e Fellipe" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="category-badge">Casamento</span>
+            <h4>Lavínia & Fellipe</h4>
+            <p>Passarela Ao Ar Livre</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item casamentos" onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1000', 'Nicolly & João', 'Estrutura Aérea')">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Nicolly e João" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="category-badge">Casamento</span>
+            <h4>Nicolly & João</h4>
+            <p>Luzes Imersivas</p>
+          </div>
+        </div>
+
+        <div class="portfolio-item casamentos" onclick="openLightbox('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=1000', 'Beatriz & Leonardo', 'Show de Fogos')">
+          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600" alt="Beatriz e Leonardo" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="category-badge">Recepção</span>
+            <h4>Beatriz & Leonardo</h4>
+            <p>Efeitos Cênicos</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" class="btn-secondary" style="color: var(--text-main); border-color: var(--text-main);">
+          <i class="fab fa-instagram"></i> Ir para o Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <img id="lightboxImg" src="" alt="Projeto La Rose">
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle"></h4>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section-padding services-bg">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Depoimentos</span>
+        <h2 class="section-title">O Que Dizem Nossos Noivos</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"A La Rose transformou nosso casamento em um conto de fadas. Foi muito além do que sonhávamos!"</p>
+          <span class="testimonial-author">Marianne & Felipe</span>
+        </div>
+
+        <div class="testimonial-card">
+          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Profissionalismo e dedicação do início ao fim nos 15 anos da minha filha. Recomendo de olhos fechados!"</p>
+          <span class="testimonial-author">Patrícia M.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section class="section-padding" id="localizacao">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info">
+          <span class="section-tag">Nosso Endereço</span>
+          <h2 class="section-title">Chegue até nós</h2>
+
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div><strong>WhatsApp:</strong> (64) 9 9287-2934</div>
+          </div>
+
+          <div class="info-item">
+            <i class="fab fa-instagram"></i>
+            <div><strong>Instagram:</strong> @larosedecoracoes</div>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15300.547645860304!2d-50.37920141776013!3d-16.519184295272172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9367351515395437%3A0xe33885a553674c1!2sLa%20Rose!5e0!3m2!1spt-BR!2sbr!4v1792238721345!5m2!1spt-BR!2sbr" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER DE CONVERSÃO FINAL (CTA) -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Pronta para Tornar seu Evento Inesquecível?</h2>
+      <p>As datas para a temporada de eventos deste ano estão com alta procura. Garanta a decoração dos seus sonhos hoje mesmo com a equipe La Rose.</p>
+      <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20garantir%20minha%20data." target="_blank" class="btn-primary" style="margin: 0 auto;">
+        <i class="fab fa-whatsapp"></i> Solicitar Orçamento sem Compromisso
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER PROFISSIONAL & CRÉDITOS VITTINO FLY -->
+  <footer class="footer-site">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Coluna 1: Sobre a La Rose -->
+        <div class="footer-col">
+          <div class="logo-footer">La Rose <span>.</span></div>
+          <p class="footer-desc">
+            Especialistas em transformar casamentos, festas de 15 anos e eventos em cenários inesquecíveis com alta cenografia e arranjos florais exclusivos.
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5564992872934" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Navegação Rápida -->
+        <div class="footer-col">
+          <h4 class="footer-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#sobre">A La Rose</a></li>
+            <li><a href="#servicos">Nossos Serviços</a></li>
+            <li><a href="#portfolio">Portfólio do Instagram</a></li>
+            <li><a href="#localizacao">Onde Estamos</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Atendimento / Contato -->
+        <div class="footer-col">
+          <h4 class="footer-title">Atendimento</h4>
+          <ul class="footer-contact-info">
+            <li><i class="fas fa-phone-alt"></i> (64) 9 9287-2934</li>
+            <li><i class="fab fa-instagram"></i> @larosedecoracoes</li>
+            <li><i class="fas fa-map-marker-alt"></i> São Luís de Montes Belos - GO</li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Créditos & Prospecção para o Desenvolvedor (Vittino Fly) -->
+        <div class="footer-col developer-col">
+          <h4 class="footer-title">Criação de Sites</h4>
+          <p class="dev-tagline">Gostou deste site? Desenvolva sua landing page de alta conversão comigo!</p>
+          <div class="dev-actions">
+            <a href="https://vittinofly.netlify.app/" target="_blank" class="dev-portfolio-btn">
+              <i class="fas fa-laptop-code"></i> Meu Portfólio (Vittino Fly)
+            </a>
+            <a href="https://wa.me/5564992872934?text=Olá!%20Vi%20o%20site%20da%20La%20Rose%20que%20você%20criou%20e%20gostaria%20de%20um%20orçamento%20para%20mim." target="_blank" class="dev-whatsapp-btn">
+              <i class="fab fa-whatsapp"></i> Falar com o Desenvolvedor
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Linha Inferior de Direitos Autorais -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>La Rose Decorações</strong>. Todos os direitos reservados.</p>
+        <p class="dev-credit">Desenvolvido com excelência por <a href="https://vittinofly.netlify.app/" target="_blank"><strong>Vittino Fly</strong></a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BARRA FIXA MOBILE -->
+  <div class="mobile-bottom-bar">
+    <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="mobile-bottom-btn">
+      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navClose = document.getElementById('navClose');
+    const navbar = document.getElementById('navbar');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function openMenu() {
+      navbar.classList.add('active');
+      menuOverlay.classList.add('active');
+    }
+
+    function closeMenu() {
+      navbar.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    navClose.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Filtros de Portfólio
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.classList.contains(filterValue)) {
+            item.classList.remove('hide');
+          } else {
+            item.classList.add('hide');
+          }
+        });
+      });
+    });
+
+    // Lightbox Modal
+    function openLightbox(imgSrc, title, desc) {
+      document.getElementById('lightboxImg').src = imgSrc;
+      document.getElementById('lightboxTitle').innerText = title;
+      document.getElementById('lightboxDesc').innerText = desc;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+
+    document.getElementById('lightboxModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
