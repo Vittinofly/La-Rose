@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="icon" type="image/x-icon" href="img/casal.png">
+  <link rel="icon" type="image/x-icon" href="img/casal-favicon.png">
   <title>La Rose Decorações | Decoração de Casamentos e Eventos</title>
 
   <!-- Meta Tags SEO / Google Meu Negócio -->
@@ -218,7 +218,7 @@
       text-align: center;
       position: relative;
       background: linear-gradient(180deg, rgba(25, 24, 23, 0.6) 0%, rgba(25, 24, 23, 0.75) 100%),
-        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+        url('img/CasamentoFogos.jpg') center/cover no-repeat;
       color: #ffffff;
     }
 
@@ -559,9 +559,13 @@
        ========================================== */
     .testimonials-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
       gap: 25px;
       margin-top: 40px;
+      width: 100%;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .testimonial-card {
@@ -933,10 +937,6 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .testimonials-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .location-grid {
         grid-template-columns: 1fr 1fr;
         gap: 60px;
@@ -1000,7 +1000,7 @@
       <nav id="navbar">
         <button class="nav-close" id="navClose">&times;</button>
         <ul>
-          <li><a href="#sobre" class="nav-link">A La Rose</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
           <li><a href="#servicos" class="nav-link">Serviços</a></li>
           <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
           <li><a href="#localizacao" class="nav-link">Contato</a></li>
@@ -1042,7 +1042,7 @@
             class="btn-primary" style="margin-top: 10px;">Falar Conosco</a>
         </div>
         <div class="about-images">
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
+          <img src="img/Arranjos.jpg"
             alt="Decoração La Rose" class="about-img-main" loading="lazy">
         </div>
       </div>
@@ -1100,42 +1100,42 @@
       </div>
 
       <div class="portfolio-grid">
-        <div class="portfolio-item 15anos reveal delay-1"
-          onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000', 'XV Ana Júlia', 'Lustres de Cristal & Espelhos')">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
-            alt="XV Ana Júlia" loading="lazy">
+        <div class="portfolio-item casamentos reveal delay-1"
+          onclick="openLightbox('img/Lavinia e Felipe.jpg', 'Lavínia e Felipe', 'Lustres de Cristal & Espelhos')">
+          <img src="img/Lavinia e Felipe.jpg"
+            alt="Lavínia e Felipe" loading="lazy">
           <div class="portfolio-overlay">
-            <span class="category-badge">15 Anos</span>
-            <h4>XV Ana Júlia</h4>
-            <p>Lustres & Espelhos</p>
+            <span class="category-badge">Casamento</span>
+            <h4>Lavínia e Felipe</h4>
+            <p>Entrega de Luzes Imersivas</p>
           </div>
         </div>
 
         <div class="portfolio-item casamentos arranjos reveal delay-2"
-          onclick="openLightbox('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1000', 'Lavínia & Fellipe', 'Passarela Cênica')">
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600"
-            alt="Lavínia e Fellipe" loading="lazy">
+          onclick="openLightbox('img/Flavia e Danilo.jpg', 'Flávia e Danilo', 'Passarela Cênica')">
+          <img src="img/Flavia e Danilo.jpg"
+            alt="Flávia e Danilo" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Casamento</span>
-            <h4>Lavínia & Fellipe</h4>
+            <h4>Flávia e Danilo</h4>
             <p>Passarela Ao Ar Livre</p>
           </div>
         </div>
 
         <div class="portfolio-item casamentos reveal delay-3"
-          onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1000', 'Nicolly & João', 'Estrutura Aérea')">
-          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600"
-            alt="Nicolly e João" loading="lazy">
+          onclick="openLightbox('img/Anny e Juliano.jpg', 'Anny e Juliano', 'Estrutura Aérea')">
+          <img src="img/Anny e Juliano.jpg"
+            alt="Anny e Juliano" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Casamento</span>
-            <h4>Nicolly & João</h4>
-            <p>Luzes Imersivas</p>
+            <h4>Anny e Juliano</h4>
+            <p>Casamento</p>
           </div>
         </div>
 
         <div class="portfolio-item casamentos reveal"
-          onclick="openLightbox('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=1000', 'Beatriz & Leonardo', 'Show de Fogos')">
-          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600"
+          onclick="openLightbox('img/Leonardo e Beatriz.jpg', 'Beatriz & Leonardo', 'Show de Fogos')">
+          <img src="img/Leonardo e Beatriz.jpg"
             alt="Beatriz e Leonardo" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Recepção</span>
@@ -1171,23 +1171,24 @@
     <div class="container">
       <div style="text-align: center;">
         <span class="section-tag">Depoimentos</span>
-        <h2 class="section-title">O Que Dizem Nossos Noivos</h2>
+        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
       </div>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
               class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"A La Rose transformou nosso casamento em um conto de fadas. Foi muito além do que sonhávamos!"</p>
-          <span class="testimonial-author">Marianne & Felipe</span>
+          <p>"Ótimo atendimento. Comprometidos e oferece mais do que foi apresentado. Organização maravilhosa. Única
+            empresa boa de eventos em São Luís."</p>
+          <span class="testimonial-author">Maria Eduarda Souza</span>
         </div>
 
         <div class="testimonial-card">
           <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-              class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Profissionalismo e dedicação do início ao fim nos 15 anos da minha filha. Recomendo de olhos fechados!"
+              class="fas fa-star"></i></div>
+          <p>Ótimo lugar, pessoal educado e eficiente belas vestimentas para todas as ocasiões"
           </p>
-          <span class="testimonial-author">Patrícia M.</span>
+          <span class="testimonial-author">Brunno Bastos</span>
         </div>
       </div>
     </div>
