@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/x-icon" href="img/casal.png">
   <title>La Rose Decorações | Decoração de Casamentos e Eventos</title>
-  
+
   <!-- Meta Tags SEO / Google Meu Negócio -->
-  <meta name="description" content="A La Rose Decorações é especialista em decoração de casamentos, festas de 15 anos e eventos com elegância e sofisticação. Fale conosco no WhatsApp!">
+  <meta name="description"
+    content="A La Rose Decorações é especialista em decoração de casamentos, festas de 15 anos e eventos com elegância e sofisticação. Fale conosco no WhatsApp!">
   <meta name="theme-color" content="#1e1d1b">
 
   <!-- Google Fonts: Playfair Display + Cormorant Garamond + Montserrat -->
+  <!-- Novas fontes: Antonio (Logo Ultra-Condensada), Cormorant Garamond e Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,9 +36,9 @@
       --gold-accent: #c5a059;
       --gold-hover: #a38141;
       --whatsapp-color: #25d366;
-      --font-title: 'Playfair Display', serif;
-      --font-serif: 'Cormorant Garamond', serif;
-      --font-sans: 'Montserrat', sans-serif;
+      --font-logo: 'Antonio', sans-serif;
+      --font-title: 'Cormorant Garamond', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
       --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -54,7 +59,9 @@
       font-family: var(--font-sans);
       line-height: 1.6;
       overflow-x: hidden;
-      padding-bottom: 70px; /* Espaço para a barra fixa mobile */
+      padding-bottom: 70px;
+      letter-spacing: -0.01em;
+      /* Espaço para a barra fixa mobile */
     }
 
     img {
@@ -86,8 +93,14 @@
       z-index: 1000;
       background: rgba(251, 249, 246, 0.95);
       backdrop-filter: blur(12px);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.04);
-      transition: var(--transition);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+      /* Transição suave para o efeito de esconder/mostrar */
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    }
+
+    /* Classe dinâmica que o JavaScript vai adicionar */
+    header.nav-hidden {
+      transform: translateY(-100%);
     }
 
     .header-container {
@@ -100,16 +113,24 @@
     }
 
     .logo {
-      font-family: var(--font-title);
-      font-size: 1.6rem;
-      letter-spacing: 3px;
-      font-weight: 600;
+      font-family: 'Antonio', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      color: var(--text-main);
+      color: #c0c0c0;
+      /* Cor prateada/champanhe clara da imagem */
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
     }
 
-    .logo span {
-      color: var(--gold-accent);
+    /* Detalhe exclusivo para a letra 'A' da imagem */
+    .logo .gold-a {
+      background: linear-gradient(180deg, #e6c88b 0%, #b88e4c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 400;
     }
 
     .menu-toggle {
@@ -130,7 +151,7 @@
       height: 100vh;
       background-color: var(--bg-light);
       padding: 90px 30px 40px;
-      box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+      box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
       transition: var(--transition);
       z-index: 999;
     }
@@ -173,7 +194,7 @@
     .menu-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 998;
       opacity: 0;
       visibility: hidden;
@@ -196,8 +217,8 @@
       justify-content: center;
       text-align: center;
       position: relative;
-      background: linear-gradient(180deg, rgba(25, 24, 23, 0.6) 0%, rgba(25, 24, 23, 0.75) 100%), 
-                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(25, 24, 23, 0.6) 0%, rgba(25, 24, 23, 0.75) 100%),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
       color: #ffffff;
     }
 
@@ -217,13 +238,14 @@
     }
 
     .hero-title {
-      font-family: var(--font-title);
+      font-family: var(--font-sans);
       font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 400;
       line-height: 1.15;
       margin-bottom: 20px;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      letter-spacing: -0.02em;
     }
 
     .hero-subtitle {
@@ -329,7 +351,7 @@
 
     .about-img-main {
       border-radius: 6px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
       width: 100%;
     }
 
@@ -355,7 +377,7 @@
     .service-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold-accent);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .service-icon {
@@ -403,7 +425,8 @@
       transition: var(--transition);
     }
 
-    .filter-btn.active, .filter-btn:hover {
+    .filter-btn.active,
+    .filter-btn:hover {
       background-color: var(--gold-accent);
       color: #ffffff;
       border-color: var(--gold-accent);
@@ -478,7 +501,7 @@
     .lightbox-modal {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 2000;
       display: none;
       justify-content: center;
@@ -503,7 +526,7 @@
       margin: 0 auto;
       border-radius: 6px;
       object-fit: contain;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     }
 
     .lightbox-caption {
@@ -546,7 +569,7 @@
       padding: 30px 25px;
       border-radius: 6px;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     }
 
     .testimonial-card i {
@@ -594,7 +617,7 @@
       height: 380px;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .map-container iframe {
@@ -697,7 +720,8 @@
       letter-spacing: 1px;
     }
 
-    .footer-links, .footer-contact-info {
+    .footer-links,
+    .footer-contact-info {
       list-style: none;
       display: flex;
       flex-direction: column;
@@ -822,7 +846,7 @@
       width: 100%;
       background: #ffffff;
       padding: 12px 20px;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
       display: flex;
       z-index: 1000;
     }
@@ -850,10 +874,13 @@
       .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .cta-group {
         flex-direction: row;
       }
-      .btn-primary, .btn-secondary {
+
+      .btn-primary,
+      .btn-secondary {
         width: auto;
       }
     }
@@ -862,9 +889,11 @@
       body {
         padding-bottom: 0;
       }
+
       .menu-toggle {
         display: none;
       }
+
       nav {
         position: static;
         width: auto;
@@ -873,32 +902,41 @@
         box-shadow: none;
         background: transparent;
       }
+
       nav ul {
         flex-direction: row;
         gap: 35px;
       }
+
       .nav-close {
         display: none;
       }
+
       .mobile-bottom-bar {
         display: none;
       }
+
       .about-grid {
         grid-template-columns: 1fr 1fr;
         gap: 70px;
       }
+
       .services-grid {
         grid-template-columns: repeat(4, 1fr);
       }
+
       .portfolio-filters {
         justify-content: center;
       }
+
       .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
       }
+
       .testimonials-grid {
         grid-template-columns: repeat(3, 1fr);
       }
+
       .location-grid {
         grid-template-columns: 1fr 1fr;
         gap: 60px;
@@ -912,19 +950,50 @@
     }
 
     /* Esconde o selo do Netlify pelo ID ou classe comum */
-     #netlify-deploy-badge, 
-     .netlify-badge {
-     display: none !important;
-     }
+    #netlify-deploy-badge,
+    .netlify-badge {
+      display: none !important;
+    }
 
+    /* Estado inicial dos elementos animados (invisíveis e ligeiramente des do topo/fundo) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    /* Quando o elemento entra na viewport */
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card.reveal.active:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Atrasos opcionais para elementos em grelha (efeito cascata) */
+    .delay-1 {
+      transition-delay: 0.15s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.45s;
+    }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
   <header>
     <div class="header-container">
-      <div class="logo">La Rose <span>.</span></div>
+      <div class="logo"><span class="gold-a">LA</span>ROSE</div>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
         <i class="fas fa-bars"></i>
       </button>
@@ -946,9 +1015,11 @@
     <div class="hero-content">
       <span class="hero-tag">Você sonha! A gente faz.</span>
       <h1 class="hero-title">Transformando Casamentos em Cenários Inesquecíveis</h1>
-      <p class="hero-subtitle">Projetos cenográficos exclusivos, arranjos florais exuberantes e ambientação sob medida para o seu grande dia.</p>
+      <p class="hero-subtitle">Projetos cenográficos exclusivos, arranjos florais exuberantes e ambientação sob medida
+        para o seu grande dia.</p>
       <div class="cta-group">
-        <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="btn-primary">
+        <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+          target="_blank" class="btn-primary">
           <i class="fab fa-whatsapp"></i> Orçamento no WhatsApp
         </a>
         <a href="#portfolio" class="btn-secondary">Ver Portfólio</a>
@@ -964,12 +1035,15 @@
           <span class="section-tag">Elegância e Amor</span>
           <h2 class="section-title">Design Cenográfico para Histórias Reais</h2>
           <p style="color: var(--text-muted); margin-bottom: 20px;">
-            Na <strong>La Rose Decorações</strong>, criamos a atmosfera perfeita para suas memórias mais importantes. Especialistas em casamentos ao ar livre, festas de 15 anos e grandes recepções.
+            Na <strong>La Rose Decorações</strong>, criamos a atmosfera perfeita para suas memórias mais importantes.
+            Especialistas em casamentos ao ar livre, festas de 15 anos e grandes recepções.
           </p>
-          <a href="https://wa.me/5564992872934?text=Olá!%20Gostaria%20de%20saber%20mais." target="_blank" class="btn-primary" style="margin-top: 10px;">Falar Conosco</a>
+          <a href="https://wa.me/5564992872934?text=Olá!%20Gostaria%20de%20saber%20mais." target="_blank"
+            class="btn-primary" style="margin-top: 10px;">Falar Conosco</a>
         </div>
         <div class="about-images">
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800" alt="Decoração La Rose" class="about-img-main" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800"
+            alt="Decoração La Rose" class="about-img-main" loading="lazy">
         </div>
       </div>
     </div>
@@ -984,25 +1058,25 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card reveal delay-1">
           <i class="fas fa-church service-icon"></i>
           <h3>Casamentos</h3>
           <p>Projetos cenográficos completos para cerimônias e recepções inesquecíveis.</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card reveal delay-2">
           <i class="fas fa-crown service-icon"></i>
           <h3>Festas de 15 Anos</h3>
           <p>Cenários modernos e sofisticados para comemorar em grande estilo.</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card reveal delay-3">
           <i class="fas fa-seedling service-icon"></i>
           <h3>Arranjos Florais</h3>
           <p>Composições com flores nobres selecionadas para mesas e portais.</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card reveal">
           <i class="fas fa-glass-cheers service-icon"></i>
           <h3>Eventos Sociais</h3>
           <p>Ambientação sofisticada para jantares e celebrações especiais.</p>
@@ -1026,8 +1100,10 @@
       </div>
 
       <div class="portfolio-grid">
-        <div class="portfolio-item 15anos" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000', 'XV Ana Júlia', 'Lustres de Cristal & Espelhos')">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="XV Ana Júlia" loading="lazy">
+        <div class="portfolio-item 15anos reveal delay-1"
+          onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000', 'XV Ana Júlia', 'Lustres de Cristal & Espelhos')">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
+            alt="XV Ana Júlia" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">15 Anos</span>
             <h4>XV Ana Júlia</h4>
@@ -1035,8 +1111,10 @@
           </div>
         </div>
 
-        <div class="portfolio-item casamentos arranjos" onclick="openLightbox('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1000', 'Lavínia & Fellipe', 'Passarela Cênica')">
-          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600" alt="Lavínia e Fellipe" loading="lazy">
+        <div class="portfolio-item casamentos arranjos reveal delay-2"
+          onclick="openLightbox('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1000', 'Lavínia & Fellipe', 'Passarela Cênica')">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=600"
+            alt="Lavínia e Fellipe" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Casamento</span>
             <h4>Lavínia & Fellipe</h4>
@@ -1044,8 +1122,10 @@
           </div>
         </div>
 
-        <div class="portfolio-item casamentos" onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1000', 'Nicolly & João', 'Estrutura Aérea')">
-          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600" alt="Nicolly e João" loading="lazy">
+        <div class="portfolio-item casamentos reveal delay-3"
+          onclick="openLightbox('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1000', 'Nicolly & João', 'Estrutura Aérea')">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=600"
+            alt="Nicolly e João" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Casamento</span>
             <h4>Nicolly & João</h4>
@@ -1053,8 +1133,10 @@
           </div>
         </div>
 
-        <div class="portfolio-item casamentos" onclick="openLightbox('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=1000', 'Beatriz & Leonardo', 'Show de Fogos')">
-          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600" alt="Beatriz e Leonardo" loading="lazy">
+        <div class="portfolio-item casamentos reveal"
+          onclick="openLightbox('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=1000', 'Beatriz & Leonardo', 'Show de Fogos')">
+          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&q=80&w=600"
+            alt="Beatriz e Leonardo" loading="lazy">
           <div class="portfolio-overlay">
             <span class="category-badge">Recepção</span>
             <h4>Beatriz & Leonardo</h4>
@@ -1064,7 +1146,8 @@
       </div>
 
       <div style="margin-top: 40px;">
-        <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" class="btn-secondary" style="color: var(--text-main); border-color: var(--text-main);">
+        <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" class="btn-secondary"
+          style="color: var(--text-main); border-color: var(--text-main);">
           <i class="fab fa-instagram"></i> Ir para o Instagram
         </a>
       </div>
@@ -1093,14 +1176,17 @@
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p>"A La Rose transformou nosso casamento em um conto de fadas. Foi muito além do que sonhávamos!"</p>
           <span class="testimonial-author">Marianne & Felipe</span>
         </div>
 
         <div class="testimonial-card">
-          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Profissionalismo e dedicação do início ao fim nos 15 anos da minha filha. Recomendo de olhos fechados!"</p>
+          <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Profissionalismo e dedicação do início ao fim nos 15 anos da minha filha. Recomendo de olhos fechados!"
+          </p>
           <span class="testimonial-author">Patrícia M.</span>
         </div>
       </div>
@@ -1127,11 +1213,9 @@
         </div>
 
         <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15300.547645860304!2d-50.37920141776013!3d-16.519184295272172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9367351515395437%3A0xe33885a553674c1!2sLa%20Rose!5e0!3m2!1spt-BR!2sbr!4v1792238721345!5m2!1spt-BR!2sbr" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="strict-origin-when-cross-origin">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15300.547645860304!2d-50.37920141776013!3d-16.519184295272172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9367351515395437%3A0xe33885a553674c1!2sLa%20Rose!5e0!3m2!1spt-BR!2sbr!4v1792238721345!5m2!1spt-BR!2sbr"
+            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
           </iframe>
         </div>
       </div>
@@ -1142,8 +1226,10 @@
   <section class="cta-banner">
     <div class="container">
       <h2>Pronta para Tornar seu Evento Inesquecível?</h2>
-      <p>As datas para a temporada de eventos deste ano estão com alta procura. Garanta a decoração dos seus sonhos hoje mesmo com a equipe La Rose.</p>
-      <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20garantir%20minha%20data." target="_blank" class="btn-primary" style="margin: 0 auto;">
+      <p>As datas para a temporada de eventos deste ano estão com alta procura. Garanta a decoração dos seus sonhos hoje
+        mesmo com a equipe La Rose.</p>
+      <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20garantir%20minha%20data."
+        target="_blank" class="btn-primary" style="margin: 0 auto;">
         <i class="fab fa-whatsapp"></i> Solicitar Orçamento sem Compromisso
       </a>
     </div>
@@ -1153,15 +1239,17 @@
   <footer class="footer-site">
     <div class="container">
       <div class="footer-grid">
-        
+
         <!-- Coluna 1: Sobre a La Rose -->
         <div class="footer-col">
           <div class="logo-footer">La Rose <span>.</span></div>
           <p class="footer-desc">
-            Especialistas em transformar casamentos, festas de 15 anos e eventos em cenários inesquecíveis com alta cenografia e arranjos florais exclusivos.
+            Especialistas em transformar casamentos, festas de 15 anos e eventos em cenários inesquecíveis com alta
+            cenografia e arranjos florais exclusivos.
           </p>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/larosedecoracoes/" target="_blank" title="Instagram"><i
+                class="fab fa-instagram"></i></a>
             <a href="https://wa.me/5564992872934" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
@@ -1195,7 +1283,8 @@
             <a href="https://vittinofly.netlify.app/" target="_blank" class="dev-portfolio-btn">
               <i class="fas fa-laptop-code"></i> Meu Portfólio (Vittino Fly)
             </a>
-            <a href="https://wa.me/5564996956530?text=Olá!%20Vi%20o%20site%20da%20La%20Rose%20que%20você%20criou%20e%20gostaria%20de%20um%20orçamento%20para%20mim." target="_blank" class="dev-whatsapp-btn">
+            <a href="https://wa.me/5564996956530?text=Olá!%20Vi%20o%20site%20da%20La%20Rose%20que%20você%20criou%20e%20gostaria%20de%20um%20orçamento%20para%20mim."
+              target="_blank" class="dev-whatsapp-btn">
               <i class="fab fa-whatsapp"></i> Falar com o Desenvolvedor
             </a>
           </div>
@@ -1206,14 +1295,16 @@
       <!-- Linha Inferior de Direitos Autorais -->
       <div class="footer-bottom">
         <p>&copy; 2026 <strong>La Rose Decorações</strong>. Todos os direitos reservados.</p>
-        <p class="dev-credit">Desenvolvido com excelência por <a href="https://vittinofly.netlify.app/" target="_blank"><strong>Victor Hugo</strong></a>.</p>
+        <p class="dev-credit">Desenvolvido com excelência por <a href="https://vittinofly.netlify.app/"
+            target="_blank"><strong>Victor Hugo</strong></a>.</p>
       </div>
     </div>
   </footer>
 
   <!-- BARRA FIXA MOBILE -->
   <div class="mobile-bottom-bar">
-    <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="mobile-bottom-btn">
+    <a href="https://wa.me/5564992872934?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+      target="_blank" class="mobile-bottom-btn">
       <i class="fab fa-whatsapp"></i> Falar no WhatsApp
     </a>
   </div>
@@ -1225,6 +1316,7 @@
     const navbar = document.getElementById('navbar');
     const menuOverlay = document.getElementById('menuOverlay');
     const navLinks = document.querySelectorAll('.nav-link');
+    const header = document.querySelector('header');
 
     function openMenu() {
       navbar.classList.add('active');
@@ -1274,11 +1366,47 @@
       document.getElementById('lightboxModal').classList.remove('active');
     }
 
-    document.getElementById('lightboxModal').addEventListener('click', function(e) {
+    document.getElementById('lightboxModal').addEventListener('click', function (e) {
       if (e.target === this) {
         closeLightbox();
       }
     });
+
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      // Se rolar para baixo e passar de 80px do topo, esconde o header
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        header.classList.add('nav-hidden');
+      } else {
+        // Se rolar para cima, mostra o header
+        header.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Dispara quando 15% do elemento estiver visível
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Opcional: descomentar a linha abaixo se quiseres que a animação só corra 1 vez
+            // observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    });
   </script>
 </body>
+
 </html>
