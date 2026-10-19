@@ -607,8 +607,8 @@
        8. BANNER DE CONVERSÃO FINAL & FOOTER PROFISSIONAL
        ========================================== */
     .cta-banner {
-      background-color: var(--bg-dark);
-      color: #ffffff;
+      background-color: var(--bg-card);
+      color: #050505;
       padding: 80px 20px;
       text-align: center;
       border-top: 1px solid rgba(197, 160, 89, 0.2);
@@ -910,6 +910,13 @@
         grid-template-columns: repeat(4, 1fr);
       }
     }
+
+    /* Esconde o selo do Netlify pelo ID ou classe comum */
+     #netlify-deploy-badge, 
+     .netlify-badge {
+     display: none !important;
+     }
+
   </style>
 </head>
 <body>
@@ -1199,7 +1206,7 @@
       <!-- Linha Inferior de Direitos Autorais -->
       <div class="footer-bottom">
         <p>&copy; 2026 <strong>La Rose Decorações</strong>. Todos os direitos reservados.</p>
-        <p class="dev-credit">Desenvolvido com excelência por <a href="https://vittinofly.netlify.app/" target="_blank"><strong>Vittino Fly</strong></a>.</p>
+        <p class="dev-credit">Desenvolvido com excelência por <a href="https://vittinofly.netlify.app/" target="_blank"><strong>Victor Hugo</strong></a>.</p>
       </div>
     </div>
   </footer>
